@@ -1,13 +1,13 @@
 //Task 1-Create a Function to Calculate Average Sales
 
 function calculateAverageSales(sales_figures){
-    if(sales_figures.length ===0) return 0
-    var SalesTotal = sales_figures.reduce((acc, curr)=> acc + curr, 0)
+    if(sales_figures.length ===0) return 0;
+    var SalesTotal = sales_figures.reduce((acc, curr)=> acc + curr, 0);
     return SalesTotal/sales_figures.length};
     // This function will calculate the average sales for the company
 
 //Task 2-Create a Function to Determine Performance Rating
-var averageSales = SalesTotal/sales_figures.length;
+
 function determinePerformanceRating (averageSales){
     if (averageSales>10000) {return "Execellent"}
     else if (averageSales>7000 && averageSales<=1000) {return "Good"}
@@ -35,5 +35,7 @@ function calculateTotalSales(sales_figures) {
         totalSales: calculateTotalSales(bottomPerformer.sales_figures),
       }}}
       // This part of the code will identify the best and worst performer among the sales team
+
+      
   
-  
+      
