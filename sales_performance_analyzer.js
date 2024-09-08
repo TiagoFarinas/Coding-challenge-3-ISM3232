@@ -10,7 +10,7 @@ function calculateAverageSales(sales_figures){
 
 function determinePerformanceRating (averageSales){
     if (averageSales>10000) {return "Execellent"}
-    else if (averageSales>7000 && averageSales<=1000) {return "Good"}
+    else if (averageSales>7000 && averageSales<=10000) {return "Good"}
     else if (averageSales>=4000 && averageSales<7000) {return "Satisfactory"}
     else { return"Needs Improvement"}};
 // This function uses a series of if else statements to check in what bracket does the average sales for the company fits in and return a string with its "grade".
@@ -35,6 +35,25 @@ function calculateTotalSales(sales_figures) {
         totalSales: calculateTotalSales(bottomPerformer.sales_figures),
       }}}
       // This part of the code will identify the best and worst performer among the sales team
+
+      // Task 4-Combine Functions to Generate a Perfomance Report
+
+      function generatePerformanceReport(salesData) {
+        var report = salesData.map(function(salesperson) {
+          var averageSales = calculateAverageSales(salesperson.sales_figures);
+          var performanceRating = determinePerformanceRating(averageSales);
+          return {
+            name: salesperson.name,
+            averageSales: averageSales.toFixed(2),
+            performanceRating: performanceRating,
+          }});
+      var performers = findTopAndBottomPerformers(salesData);
+        return {
+          report: report,
+          topPerformer: performers.topPerformer,
+          bottomPerformer: performers.bottomPerformer,
+        }};
+         // This section of the code will be responsible for bbasically gathering all the function and accepting an array of sales form multiple people
 
       
   
